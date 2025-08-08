@@ -7,12 +7,13 @@ export async function POST(request: NextRequest) {
     // Demo authentication - replace with real authentication logic
     if (username === 'admin' && password === 'password') {
       const user = {
+       
         id: 1,
         username: 'admin',
         email: 'admin@company.com',
         role: 'administrator'
       }
-
+    
       const token = 'demo-jwt-token-' + Date.now()
 
       return NextResponse.json({

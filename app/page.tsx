@@ -69,7 +69,7 @@ export default function LoginPage() {
           <Box sx={{ textAlign: 'center', mb: 4 }}>
             <Business sx={{ fontSize: 48, color: 'primary.main', mb: 2 }} />
             <Typography variant="h4" component="h1" gutterBottom>
-              Muultitex MIS
+              Multitex MIS
             </Typography>
             {/* <Typography variant="body2" color="text.secondary">
               Enterprise Resource Planning Portal

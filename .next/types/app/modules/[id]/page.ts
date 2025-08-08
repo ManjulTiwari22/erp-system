@@ -1,4 +1,4 @@
-// File: C:\Users\manju\erp-system\app\modules\[id]\page.tsx
+// File: C:\Users\Administrator\erp system\erp-system\app\modules\[id]\page.tsx
 import * as entry from '../../../../../app/modules/[id]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
