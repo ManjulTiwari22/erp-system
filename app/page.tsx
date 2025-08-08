@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { 
-  Container, 
-  Paper, 
-  TextField, 
-  Button, 
-  Typography, 
+import {
+  Container,
+  Paper,
+  TextField,
+  Button,
+  Typography,
   Box,
   Alert,
   InputAdornment,
@@ -41,9 +41,18 @@ export default function LoginPage() {
 
       if (response.ok) {
         const data = await response.json()
+
+        // Store in localStorage
         localStorage.setItem('token', data.token)
         localStorage.setItem('user', JSON.stringify(data.user))
-        router.push('/dashboard')
+
+        // ✅ Redirect based on role or department
+        if (data.user.department === 'IT') {
+          router.push('/it-dashboard')
+        } else {
+          router.push('/dashboard')
+        }
+
       } else {
         const errorData = await response.json()
         setError(errorData.message || 'Login failed')
@@ -71,9 +80,6 @@ export default function LoginPage() {
             <Typography variant="h4" component="h1" gutterBottom>
               Multitex MIS
             </Typography>
-            {/* <Typography variant="body2" color="text.secondary">
-              Enterprise Resource Planning Portal
-            </Typography> */}
           </Box>
 
           {error && (
@@ -94,7 +100,7 @@ export default function LoginPage() {
                 setCredentials({ ...credentials, username: e.target.value })
               }
             />
-            
+
             <TextField
               fullWidth
               label="Password"

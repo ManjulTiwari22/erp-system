@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'ERP System',
   description: 'Enterprise Resource Planning System',
-    generator: 'v0.dev'
+    generator: ''
 }
 
 export default function RootLayout({
